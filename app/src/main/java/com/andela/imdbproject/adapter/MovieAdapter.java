@@ -20,6 +20,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private List<Movie> movies;
     private Context context;
+    private static final String BASE_IMAGE_URL = "http://image.tmdb.org/t/p/original";
 
     public MovieAdapter(List<Movie> movies, Context context) {
         this.movies = movies;
@@ -40,9 +41,9 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         final Movie movie = movies.get(i);
         MovieViewHolder movieViewHolder = (MovieViewHolder) viewHolder;
 
-        Picasso.get().load(movie.getImageUrl()).into(movieViewHolder.movieImage);
+        Picasso.get().load(BASE_IMAGE_URL + movie.getImageUrl()).into(movieViewHolder.movieImage);
         movieViewHolder.movieTitle.setText(movie.getTitle());
-        movieViewHolder.year.setText(String.format(Locale.ENGLISH, "%d", movie.getYear()));
+        movieViewHolder.year.setText(String.format(Locale.ENGLISH, "%s", movie.getReleaseDate().substring(0, 4)));
         movieViewHolder.rating.setText(String.format(Locale.ENGLISH, "%.1f", movie.getRating()));
     }
 

@@ -1,16 +1,26 @@
 package com.andela.imdbproject.data;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Movie {
 
+    @SerializedName("poster_path")
     private String imageUrl;
+
+    @SerializedName("title")
     private String title;
-    private int year;
+
+    @SerializedName("release_date")
+    private String releaseDate;
+
+    @SerializedName("vote_average")
     private double rating;
 
-    public Movie(String imageUrl, String title, int year, double rating) {
+    Movie(String imageUrl, String title, String releaseDate, double rating) {
         this.title = title;
-        this.year = year;
+        this.releaseDate = releaseDate;
         this.rating = rating;
+        this.imageUrl = imageUrl;
     }
 
     public String getImageUrl() {
@@ -21,8 +31,8 @@ public class Movie {
         return title;
     }
 
-    public int getYear() {
-        return year;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public double getRating() {

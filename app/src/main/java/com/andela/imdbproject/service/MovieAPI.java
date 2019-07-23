@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface MovieAPI {
 
-    @GET("list/5?api_key=3f911b776823abb2d83ae03666802b86")
+    @GET("list/4?api_key=3f911b776823abb2d83ae03666802b86")
     Call<MovieList> getMovies();
 }

@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MovieService {
 
     private Retrofit retrofit;
-    private static final String BASE_URL = "https://api.themoviedb.org";
+    private static final String BASE_URL = "https://api.themoviedb.org/3/";
 
     public MovieAPI getMovieAPI() {
         Gson gson = new GsonBuilder().setLenient().create();
